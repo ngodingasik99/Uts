@@ -6,18 +6,17 @@ use App\Models\Product;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 
-class Category extends Model
+class Cart extends Model
 {
     use HasFactory;
 
     protected $fillable = [
-        'name',
-        'description',
-        'foto'
+        'product_id',
+        'qty'
     ];
 
     public function product()
     {
-        return $this->hasMany(Product::class);
+        return $this->belongsTo(Product::class);
     }
 }
