@@ -69,3 +69,9 @@ Route::put('/category/{id}', [CategoryController::class, 'update']);
 
 
 
+Route::get('/register', [AuthController::class, "register"])->name('register');
+Route::get('/login', [AuthController::class, "login"])->name('login');
+Route::get('/logout', [AuthController::class, "logout"])->name('logout');
+
+Route::post('/register', [AuthController::class, "doRegister"])->name('do.register');
+Route::post('/login', [AuthController::class, "doLogin"])->name('do.login');
