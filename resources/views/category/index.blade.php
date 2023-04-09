@@ -31,7 +31,7 @@
                   <tr>
                     <th scope="col">Id</th>
                     <th scope="col">Nama Kategori</th>
-                    <th scope="col">Deskripsi</th>
+                    <th scope="col">Deskripsi</th> 
                     <th scope="col">Aksi</th>
                   </tr>
                 </thead>
