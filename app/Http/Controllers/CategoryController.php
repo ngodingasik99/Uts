@@ -12,20 +12,21 @@ class CategoryController extends Controller
     {
         $categories = Category::latest()->paginate(5);
 
-        return view('categories.index', compact('categories'))
+        return view('categori.index', compact('categories'))
             ->with('i', (request()->input('page', 1) - 1) * 5);
     }
 
     public function create()
     {
-        return view('categories.create');
+        return view('categori.create');
     }
 
     public function store(Request $request)
     {
         $request->validate([
             'name' => 'required',
-            'kelas' => 'required',
+            'description' => 'required',
+            'foto' => 'required',
         ]);
 
         Category::create($request->all());
@@ -36,24 +37,25 @@ class CategoryController extends Controller
 
     public function show(Category $category)
     {
-        return view('categories.show', compact('category'));
+        return view('categori.show', compact('category'));
     }
 
     public function edit(Category $category)
     {
-        return view('categories.edit', compact('category'));
+        return view('categori.edit', compact('category'));
     }
 
     public function update(Request $request, Category $category)
     {
         $request->validate([
             'name' => 'required',
-            'kelas' => 'required',
+            'description' => 'required',
+            'foto' => 'required',
         ]);
 
         $category->update($request->all());
 
-        return redirect()->route('categories.index')
+        return redirect()->route('categori.index')
             ->with('success', 'Category updated successfully');
     }
 
@@ -61,7 +63,7 @@ class CategoryController extends Controller
     {
         $category->delete();
 
-        return redirect()->route('categories.index')
+        return redirect()->route('categori.index')
             ->with('success', 'category deleted successfully');
     }
 }
