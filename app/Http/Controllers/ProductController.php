@@ -41,14 +41,7 @@ class ProductController extends Controller
             'product' => $id,
         ]);
     }
-
-     /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-
+    
     public function edit(Product $product)
     {
         return view('products.edit',compact('product'));
