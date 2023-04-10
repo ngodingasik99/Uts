@@ -22,14 +22,14 @@
     </div>
     <div class="container">
 
-        <form action="/product/{{ $product->id }}" method="POST">
+        <form action="/product/{{ $product->id }}" method="POST" enctype="multipart/form-data">
             @method('PUT')
             @csrf
             <div class="mb-3">
                 <label for="exampleInputEmail1" class="form-label">Nama Produk</label>
-                <input type="text" class="form-control @error ('product_name') is-invalid @enderror" id="exampleInputEmail1" aria-describedby="emailHelp" name="product_name" value="{{$product->name}}">
+                <input type="text" class="form-control @error ('name') is-invalid @enderror" id="exampleInputEmail1" aria-describedby="emailHelp" name="name" value="{{$product->name}}">
                 <div id="emailHelp" class="form-text">Produk tidak boleh lebih dari 255</div>
-                @error('product_name')
+                @error('name')
                 <div class="invalid-feedback">
                     Nama produk tidak boleh kosong
                 </div>
@@ -37,8 +37,8 @@
             </div>
             <div class="mb-3">
                 <label for="exampleInputPassword1" class="form-label">Harga</label>
-                <input type="text" class="form-control @error ('price_product') is-invalid @enderror" id="exampleInputPassword1" name="price_product" value="{{$product->price}}">
-                @error('product_name')
+                <input type="text" class="form-control @error ('price') is-invalid @enderror" id="exampleInputPassword1" name="price" value="{{$product->price}}">
+                @error('price')
                 <div class="invalid-feedback">
                     Harga tidak boleh kosong
                 </div>
@@ -46,8 +46,8 @@
             </div>
             <div class="mb-3">
                 <label for="exampleInputPassword1" class="form-label">Deskripsi</label>
-                <input type="text" class="form-control @error ('product_descripstion') is-invalid @enderror" id="exampleInputPassword1" name="product_descripstion" value="{{$product->description}}">
-                @error('product_name')
+                <input type="text" class="form-control @error ('description') is-invalid @enderror" id="exampleInputPassword1" name="description" value="{{$product->description}}">
+                @error('description')
                 <div class="invalid-feedback">
                     Deskripsi tidak boleh kosong
                 </div>
@@ -65,11 +65,21 @@
               @error('product_name')
                 <div class="invalid-feedback">
                 </div>
-                @enderror
-                <div class="d-flex">
-                    <button type="submit" class="btn btn-warning mt-3">Simpan</button>
-
+              @enderror
+              <div class="mb-3 mt-3">
+                <label for="exampleInputPassword1" class="form-label">Foto</label>
+                <input type="file" class="form-control @error ('foto') is-invalid @enderror" id="exampleInputPassword1" name="foto"><br>
+                <img src="{{asset('storage/' . $product->foto)}}" width="90px" alt="">
+            </div>
+              {{-- <div class="mb-3 mt-3">
+                <label for="exampleInputPassword1" class="form-label">Foto</label>
+                <input type="file" class="form-control @error ('foto') is-invalid @enderror" id="exampleInputPassword1" name="foto">
+                <div class="mt-3">
+                  <img src="{{asset('storage/' . $product->foto)}}" width="90px" alt="">
                 </div>
+              </div> --}}
+              <button type="submit" class="btn btn-warning mt-3">Edit</button>
+              <a href="/product" class="btn btn-success mt-3">Back</a>
         </form>
     </div>
 @endsection

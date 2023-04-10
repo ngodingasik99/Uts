@@ -54,7 +54,7 @@
                     <td>
                         <a href="{{url('product/'. $item->id)}}" class="btn btn-info">Detail</a>
                         <a href="/product/{{$item->id}}/edit" class="btn btn-warning">Edit</a>
-                        <a href="/product/{{$item->id}}/delete" class="btn btn-danger">Hapus</a>
+                        <a href="/product/{{$item->id}}/delete" class="btn btn-danger">Delete</a>
                     </td>
                   </tr>
                   @endforeach
