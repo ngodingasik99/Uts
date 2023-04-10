@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Category;
 use App\Models\Product;
 use Illuminate\Http\Request;
 
@@ -12,13 +13,14 @@ class ProductController extends Controller
     {
         $products = Product::latest()->paginate(5);
 
-        return view('Products.index',compact('products'))
+        return view('Product.index',compact('products'))
             ->with('i', (request()->input('page', 1) - 1) * 5);
     }
 
     public function create()
     {
-        return view('products.create');
+        $categories = Category::all();
+        return view('product.add', compact(['categories']));
     }
 
     public function store(Request $request)

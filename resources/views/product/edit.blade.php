@@ -57,7 +57,6 @@
             <select class="form-select @error ('category_id') is-invalid @enderror" aria-label="Default select example" name="category_id" value="{{$product->name}}">
                 <option selected></option>
                 @foreach ($categories as $category)
-                                                    {{-- ternary --}}
                 <option value="{{ $category->id }}" {{$product->category_id == $category->id ? 'selected': ''}}>
                     {{$category->name}}
                 </option>

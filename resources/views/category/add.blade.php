@@ -22,13 +22,13 @@
     </div>
 
     <div class="container">
-    <form action="{{url('/category')}}" method="post">
+    <form action="/category/store" method="post" enctype="multipart/form-data">
         @csrf
         <div class="mb-3">
             <label for="exampleInputEmail1" class="form-label">Nama Kategori</label>
-            <input type="text" class="form-control @error ('category_name') is-invalid @enderror " id="exampleInputEmail1" aria-describedby="emailHelp" name="category_name">
+            <input type="text" class="form-control @error ('name') is-invalid @enderror " id="exampleInputEmail1" name="name">
             <div id="emailHelp" class="form-text">Produk tidak boleh lebih dari 255</div>
-            @error('category_name')
+            @error('name')
             <div class="invalid-feedback">
                 Nama produk tidak boleh kosong
             </div>
@@ -36,14 +36,24 @@
         </div>
         <div class="mb-3">
             <label for="exampleInputPassword1" class="form-label">Deskripsi</label>
-            <input type="text" class="form-control @error ('category_descripstion') is-invalid @enderror" id="exampleInputPassword1" name="category_descripstion">
-            @error('category_name')
+            <input type="text" class="form-control @error ('description') is-invalid @enderror" id="exampleInputPassword1" name="description">
+            @error('description')
             <div class="invalid-feedback">
                 Deskripsi tidak boleh kosong
             </div>
             @enderror
         </div>
+        <div class="mb-3">
+            <label for="exampleInputPassword1" class="form-label">Foto</label>
+            <input type="file" class="form-control @error ('foto') is-invalid @enderror" id="exampleInputPassword1" name="foto">
+            @error('foto')
+            <div class="invalid-feedback">
+                Foto tidak boleh kosong
+            </div>
+            @enderror
+        </div>
         <button type="submit" class="btn btn-primary mt-3">Simpan</button>
+        <a href="/category" class="btn btn-success mt-3">Back</a>
     </form>
 </div>
 @endsection

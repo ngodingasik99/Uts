@@ -9,7 +9,7 @@
         <li class="list-group-item" style="color:indigo"><h3>{{ $product->name }}</h3> </li><br>
         <li class="list-group-item">Kategori: {{$product->category->name}}</li>
         <li class="list-group-item">Deskripsi: {{$product->description}}</li>
-        <li class="list-group-item" style="color:blue" >Harga : RP {{ $product->price }}</li>
+        <li class="list-group-item" style="color: aliceblue" >Harga : RP {{ $product->price }}</li>
       </ul>
       <div class="card-body">
         <form action="/katalog" method="post" id="toCartForm-{{$product->id}}">

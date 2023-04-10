@@ -1,7 +1,9 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\AuthController;
+use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\ProductController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -21,7 +23,7 @@ Route::get('/', function () {
 //produk
 Route::get('/product', [ProductController::class, 'index']);
 
-Route::get('product.add', [ProductController::class, 'create']);
+Route::get('/product/add', [ProductController::class, 'create']);
 
 Route::get('/product/{id}', [ProductController::class, 'show']);
 
@@ -29,7 +31,7 @@ Route::get('/product/{id}/edit', [ProductController::class, 'edit']);
 
 Route::get('/product/{id}/delete', [ProductController::class, 'destroy']);
 
-Route::post('/product', [ProductController::class, 'store' ]);
+Route::post('/product/store', [ProductController::class, 'store' ]);
 
 Route::put('/product/{id}', [ProductController::class, 'update']);
 
@@ -38,13 +40,13 @@ Route::put('/product/{id}', [ProductController::class, 'update']);
 //kategori
 Route::get('/category', [CategoryController::class, 'index']);
 
-Route::get('category.add', [CategoryController::class, 'create']);
+Route::get('/category/add', [CategoryController::class, 'create']);
 
 Route::get('/category/{id}/edit', [CategoryController::class, 'edit']);
 
-Route::get('/category/{id}/delete', [CategoryController::class, 'destroy']);
+Route::get('/category/{id}', [CategoryController::class, 'destroy']);
 
-Route::post('/category', [CategoryController::class, 'store' ]);
+Route::post('/category/store', [CategoryController::class, 'store' ])->name('/category/store');
 
 Route::put('/category/{id}', [CategoryController::class, 'update']);
 

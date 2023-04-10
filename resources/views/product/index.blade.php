@@ -4,7 +4,6 @@
 
 @section('content')
     <div class="content-wrapper">
-        <!-- Content Header (Page header) -->
         <div class="content-header">
             <div class="container-fluid">
                 <div class="row mb-2">
@@ -17,20 +16,20 @@
     @guest
         <p>Anda belum login</p>
     @endguest
-                </div><!-- /.col -->
+                </div>
                 <div class="col-sm-6">
                     <ol class="breadcrumb float-sm-right">
                     <li class="breadcrumb-item"><a href="#">Home</a></li>
                     <li class="breadcrumb-item active">Data Produk</li>
                     </ol>
-                </div><!-- /.col -->
-                </div><!-- /.row -->
-            </div><!-- /.container-fluid -->
+                </div>
+                </div>
+            </div>
         </div>
 
       <div class="container item-center">
         <div class="d-flex">
-            <a href="{{ url('product.add')}}" class="btn btn-primary mt-3" type="button">+ Tambah Produk</a>
+            <a href="/product/add" class="btn btn-primary mt-3" type="button">+ Tambah Produk</a>
          </div><br>
 
               <table class="table table-hover text-light">

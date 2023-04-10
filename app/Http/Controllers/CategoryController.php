@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Models\Category;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
+use Illuminate\Validation\Rules\File;
 
 class CategoryController extends Controller
 {
@@ -12,58 +14,67 @@ class CategoryController extends Controller
     {
         $categories = Category::latest()->paginate(5);
 
-        return view('categori.index', compact('categories'))
+        return view('category.index', compact('categories'))
             ->with('i', (request()->input('page', 1) - 1) * 5);
     }
 
     public function create()
     {
-        return view('categori.create');
+        return view('category.add');
     }
 
     public function store(Request $request)
     {
-        $request->validate([
+        $validasi = $request->validate([
             'name' => 'required',
             'description' => 'required',
-            'foto' => 'required',
+            'foto' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
         ]);
+        if ($request->file('foto')) {
+            $validasi['foto'] = $request->file('foto')->store('gambar');
+    }
 
-        Category::create($request->all());
-
-        return redirect()->route('categories.index')
+        Category::create($validasi);
+        return redirect('/category')
             ->with('success', 'Category created successfully.');
     }
 
-    public function show(Category $category)
+    // public function show(Category $category)
+    // {
+    //     return view('categori.show', compact('category'));
+    // }
+
+    public function edit($id)
     {
-        return view('categori.show', compact('category'));
+        $category = Category::find($id);
+        return view('category.edit', compact(['category']));
     }
 
-    public function edit(Category $category)
-    {
-        return view('categori.edit', compact('category'));
-    }
-
-    public function update(Request $request, Category $category)
+    public function update(Request $request, $id)
     {
         $request->validate([
             'name' => 'required',
             'description' => 'required',
-            'foto' => 'required',
+            'foto' => [File::types(['jpg', 'jpeg', 'png', 'gif'])->max(2 * 1024)],
         ]);
 
-        $category->update($request->all());
-
-        return redirect()->route('categori.index')
+        $data = Category::find($id);
+        $data->name = $request->name;
+        $data->description = $request->description;
+        if ($request->file('foto')) {
+            Storage::delete($data->foto);
+            $data->foto = Storage::putFile('gambar', $request->file('foto'));
+        }
+        $data->save();
+        return redirect('/category')
             ->with('success', 'Category updated successfully');
     }
 
-    public function destroy(Category $category)
+    public function destroy($category)
     {
-        $category->delete();
+        Category::find($category)->delete();
 
-        return redirect()->route('categori.index')
+        return redirect('/category')
             ->with('success', 'category deleted successfully');
     }
 }

@@ -3,10 +3,10 @@
 @section('title', 'Add | Product')
 
 @section('content')
-<div class="content-wrapper">
-    <!-- Content Header (Page header) -->
+{{-- <div class="container"> --}}
+  <div class="content-wrapper">
     <div class="content-header">
-      <div class="container-fluid">
+      <div class="container">
         <div class="row mb-2">
           <div class="col-sm-6">
             <h1 class="m-0"> <strong>Tambah Produk</strong> </h1>
@@ -42,7 +42,7 @@
                 </div>
                 @enderror
             </div>
-
+  
             <div class="mb-3">
                 <label for="exampleInputPassword1" class="form-label">Deskripsi</label>
                 <input type="text" class="form-control @error ('product_descripstion') is-invalid @enderror" id="exampleInputPassword1" name="product_descripstion">
@@ -66,5 +66,6 @@
             <button type="submit" class="d-flex btn btn-success mt-3 justify-content-center">Tambah</button>
         </form>
     </div>
+  </div>
 </div>
 @endsection
