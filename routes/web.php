@@ -17,8 +17,8 @@ use App\Http\Controllers\ProductController;
 
 
 Route::get('/', function () {
-    return view('layout/admin');
-});
+    return view('welcome');
+})->middleware('auth:web');
 
 //produk
 Route::get('/product', [ProductController::class, 'index']);
@@ -51,19 +51,7 @@ Route::post('/category/store', [CategoryController::class, 'store' ])->name('/ca
 Route::put('/category/{id}', [CategoryController::class, 'update']);
 
 
-
-
-
-
-
-
 //cart
-
-
-
-
-
-
 
 
 

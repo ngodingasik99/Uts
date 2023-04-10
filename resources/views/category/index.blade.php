@@ -10,6 +10,13 @@
                 <div class="row mb-2">
                 <div class="col-sm-6">
                     <h1 class="m-0">Category</h1>
+                    @auth
+                    <p>Selamat Datang {{ Auth::user()->name }}!</p>
+                @endauth
+
+                @guest
+                    <p>Anda belum login</p>
+                @endguest
                 </div>
                 <div class="col-sm-6">
                     <ol class="breadcrumb float-sm-right">
@@ -29,8 +36,8 @@
                   <tr>
                     <th scope="col">#</th>
                     <th scope="col">Nama Kategori</th>
-                    <th scope="col">Deskripsi</th> 
-                    <th scope="col">Foto</th> 
+                    <th scope="col">Deskripsi</th>
+                    <th scope="col">Foto</th>
                     <th scope="col">Aksi</th>
                   </tr>
                 </thead>
