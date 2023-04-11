@@ -21,13 +21,13 @@
       </div><!-- /.container-fluid -->
     </div>
     <div class="container">
-        <form action="{{url('/product')}}" method="post">
+        <form action="{{url('/product/store')}}" method="post" enctype="multipart/form-data">
             @csrf
             <div class="mb-1">
                 <label for="exampleInputEmail1" class="form-label">Nama Produk</label>
-                <input type="text" class="form-control @error ('product_name') is-invalid @enderror" id="exampleInputEmail1" aria-describedby="emailHelp" name="product_name">
+                <input type="text" class="form-control @error ('name') is-invalid @enderror" id="exampleInputEmail1" aria-describedby="emailHelp" name="name">
                 <div id="emailHelp" class="form-text">Produk tidak boleh lebih dari 255</div>
-                @error('product_name')
+                @error('name')
                 <div class="invalid-feedback">
                     Nama produk tidak boleh kosong
                 </div>
@@ -35,8 +35,8 @@
             </div>
             <div class="mb-3">
                 <label for="exampleInputPassword1" class="form-label">Harga</label>
-                <input type="text" class="form-control @error ('price_product') is-invalid @enderror" id="exampleInputPassword1" name="price_product">
-                @error('product_name')
+                <input type="text" class="form-control @error ('price') is-invalid @enderror" id="exampleInputPassword1" name="price">
+                @error('price')
                 <div class="invalid-feedback">
                     Harga tidak boleh kosong
                 </div>
@@ -45,8 +45,8 @@
   
             <div class="mb-3">
                 <label for="exampleInputPassword1" class="form-label">Deskripsi</label>
-                <input type="text" class="form-control @error ('product_descripstion') is-invalid @enderror" id="exampleInputPassword1" name="product_descripstion">
-                @error('product_name')
+                <input type="text" class="form-control @error ('description') is-invalid @enderror" id="exampleInputPassword1" name="description">
+                @error('description')
                 <div class="invalid-feedback">
                     Deskripsi tidak boleh kosong
                 </div>
@@ -59,11 +59,17 @@
                 <option value="{{ $item->id }}">{{$item->id}} - {{$item->name}}</option>
                 @endforeach
               </select>
-              @error('product_name')
+              @error('category_id')
                 <div class="invalid-feedback">
+                  Kategori tidak boleh kosong
                 </div>
                 @enderror
-            <button type="submit" class="d-flex btn btn-success mt-3 justify-content-center">Tambah</button>
+              <div class="mb-3 mt-3">
+                <label for="exampleInputPassword1" class="form-label">Foto</label>
+                <input type="file" class="form-control @error ('foto') is-invalid @enderror" id="exampleInputPassword1" name="foto">
+              </div>
+              <button type="submit" class="d-flex btn btn-warning mt-3 justify-content-center">Add</button>
+              <a href="/product" class="btn btn-success mt-3">Back</a>
         </form>
     </div>
   </div>

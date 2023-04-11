@@ -46,11 +46,6 @@
             <label for="exampleInputPassword1" class="form-label">Foto</label>
             <input type="file" class="form-control @error ('foto') is-invalid @enderror" id="exampleInputPassword1" name="foto" value="{{$category->foto}}"><br>
             <img src="{{asset('storage/' . $category->foto)}}" width="90px" alt="">
-            @error('foto')
-            <div class="invalid-feedback">
-                Deskripsi tidak boleh kosong
-            </div>
-            @enderror
         </div>
         <button type="submit" class="btn btn-warning mt-3">Edit</button>
         <a href="/category" class="btn btn-success mt-3">Back</a>
