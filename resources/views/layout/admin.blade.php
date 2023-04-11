@@ -38,7 +38,7 @@
     <ul class="navbar-nav ml-auto">
       <!-- Navbar Search -->
       <li class="nav-item">
-        <a href="{{route('login')}}" class="btn btn-outline-secondary" role="button" data-bs-toggle="button">Logout</a>
+        <a href="{{route('logout')}}" class="btn btn-outline-secondary" role="button" data-bs-toggle="button">Logout</a>
       </li>
 
       <!-- Messages Dropdown Menu -->

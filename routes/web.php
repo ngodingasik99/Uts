@@ -21,7 +21,7 @@ Route::get('/', function () {
 })->middleware('auth:web');
 
 //produk
-Route::get('/product', [ProductController::class, 'index']);
+Route::get('/product', [ProductController::class, 'index'])->middleware('auth:web');
 
 Route::get('/product/add', [ProductController::class, 'create']);
 
@@ -38,7 +38,7 @@ Route::put('/product/{id}', [ProductController::class, 'update']);
 
 
 //kategori
-Route::get('/category', [CategoryController::class, 'index']);
+Route::get('/category', [CategoryController::class, 'index'])->middleware('auth:web');
 
 Route::get('/category/add', [CategoryController::class, 'create']);
 
