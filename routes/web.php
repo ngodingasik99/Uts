@@ -50,17 +50,12 @@ Route::post('/category/store', [CategoryController::class, 'store' ])->name('/ca
 
 Route::put('/category/{id}', [CategoryController::class, 'update']);
 
-<<<<<<< HEAD
-//keranjang
-Route::get('/addcart/{id}', [PorductController::class, 'addcart']);
-
-=======
 //cart
 Route::get('/cart', [CartController::class, 'index']);
 Route::get('/cart/{id}/add', [CartController::class, 'create']);
 Route::get('/cart/{id}/min', [CartController::class, 'min']);
 Route::get('/cart/{id}/plus', [CartController::class, 'plus']);
->>>>>>> backup
+
 });
 
 Route::get('/register', [AuthController::class, "register"])->name('register');
