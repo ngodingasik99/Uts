@@ -2,8 +2,9 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
-use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\CartController;
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\CategoryController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -48,6 +49,12 @@ Route::get('/category/{id}', [CategoryController::class, 'destroy']);
 Route::post('/category/store', [CategoryController::class, 'store' ])->name('/category/store');
 
 Route::put('/category/{id}', [CategoryController::class, 'update']);
+
+//cart
+Route::get('/cart', [CartController::class, 'index']);
+Route::get('/cart/{id}/add', [CartController::class, 'create']);
+Route::get('/cart/{id}/min', [CartController::class, 'min']);
+Route::get('/cart/{id}/plus', [CartController::class, 'plus']);
 });
 
 Route::get('/register', [AuthController::class, "register"])->name('register');
