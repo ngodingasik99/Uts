@@ -35,7 +35,7 @@
       margin-left: 65%;
     }
   </style>
-      <span class="geser"><i class="fas fa-shopping-cart"></i></span>
+      <span class="geser"><i class="fas fa-shopping-cart">{{$data->}}</i></span>
 
     <ul class="navbar-nav ml-auto">
       <!-- Navbar Search -->
