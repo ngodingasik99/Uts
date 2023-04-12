@@ -48,6 +48,10 @@ Route::get('/category/{id}', [CategoryController::class, 'destroy']);
 Route::post('/category/store', [CategoryController::class, 'store' ])->name('/category/store');
 
 Route::put('/category/{id}', [CategoryController::class, 'update']);
+
+//keranjang
+Route::get('/addcart/{id}', [PorductController::class, 'addcart']);
+
 });
 
 Route::get('/register', [AuthController::class, "register"])->name('register');

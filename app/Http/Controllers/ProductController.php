@@ -89,5 +89,11 @@ class ProductController extends Controller
         return redirect()->route('products.index')
                         ->with('success','roduct deleted successfully');
     }
+    
+    public function addcart($id)
+    {
+        $data = Product::all($id);
+        return view('/layout/admin', $data);
+    }
 }
 

@@ -29,6 +29,7 @@
       </li>
     </ul>
 
+    
   <style>
     .geser{
       margin-left: 65%;
@@ -95,12 +96,10 @@
 
   <aside class="control-sidebar control-sidebar-dark">
   </aside>
-  <footer class="main-footer">
-    <strong>Copyright &copy; 2014-2021 <a href="https://adminlte.io">Kelompok 12</a>.</strong>
-    All rights reserved.
-    <div class="float-right d-none d-sm-inline-block">
-      <b>Version</b> 3.2.0
-    </div>
+  <footer style="text-align: center" class="main-footer">
+    <strong>
+      Copyright &copy; <script>document.write(new Date().getFullYear());</script> By Kelompok 12.
+    </strong>
   </footer>
 </div>
 
