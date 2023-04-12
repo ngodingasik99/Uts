@@ -20,8 +20,9 @@ Route::get('/', function () {
     return view('welcome');
 })->middleware('auth:web');
 
+Route::middleware(['auth:web'])->group(function(){
 //produk
-Route::get('/product', [ProductController::class, 'index'])->middleware('auth:web');
+Route::get('/product', [ProductController::class, 'index']);
 
 Route::get('/product/add', [ProductController::class, 'create']);
 
@@ -35,10 +36,8 @@ Route::post('/product/store', [ProductController::class, 'store' ]);
 
 Route::put('/product/{id}', [ProductController::class, 'update']);
 
-
-
 //kategori
-Route::get('/category', [CategoryController::class, 'index'])->middleware('auth:web');
+Route::get('/category', [CategoryController::class, 'index']);
 
 Route::get('/category/add', [CategoryController::class, 'create']);
 
@@ -49,17 +48,7 @@ Route::get('/category/{id}', [CategoryController::class, 'destroy']);
 Route::post('/category/store', [CategoryController::class, 'store' ])->name('/category/store');
 
 Route::put('/category/{id}', [CategoryController::class, 'update']);
-
-
-//cart
-
-
-
-
-//transaksi
-
-
-
+});
 
 Route::get('/register', [AuthController::class, "register"])->name('register');
 Route::get('/login', [AuthController::class, "login"])->name('login');
