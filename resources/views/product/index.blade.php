@@ -45,9 +45,23 @@
                     <td>{{$item->description}}</td>
                     <td>{{$item->category->name}}</td>
                     <td>
-                        <a href="{{url('product/'. $item->id)}}" class="btn btn-info">Detail</a>
-                        <a href="/product/{{$item->id}}/edit" class="btn btn-warning">Edit</a>
-                        <a href="/product/{{$item->id}}/delete" class="btn btn-danger">Delete</a>
+                        <div class="btn-group">
+                            <div class="btn-group mr-2" role="group" aria-label="First group">
+                              <a href="{{url('product/'. $item->id)}}" class="btn btn-info btn-sm" style="border-radius: 7px;">
+                              <i class="fas fa-info"></i></a>
+                            </div>
+                            <div class="btn-group mr-2" role="group" aria-label="First group">
+                                <a href="/product/{{$item->id}}/edit" class="btn btn-warning btn-sm" style="border-radius: 7px;">
+                                <i class="fas fa-edit"></i></a>
+                              </div>
+                            <div class="btn-group mr-2" role="group" aria-label="First group">
+                                <a href="/product/{{$item->id}}/delete" class="btn btn-danger btn-sm" style="border-radius: 7px;">
+                                <i class="fas fa-trash"></i></a>
+                            </div>
+                        </div>
+                        {{-- <a href="{{url('product/'. $item->id)}}" class="btn btn-info"><i class="fas fa-info"></i></a>
+                        <a href="/product/{{$item->id}}/edit" class="btn btn-warning"><i class="fas fa-edit"></i></a>
+                        <a href="/product/{{$item->id}}/delete" class="btn btn-danger"><i class="fas fa-trash"></i></a> --}}
                     </td>
                   </tr>
                   @endforeach

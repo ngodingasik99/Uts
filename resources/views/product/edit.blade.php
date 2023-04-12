@@ -78,7 +78,7 @@
                   <img src="{{asset('storage/' . $product->foto)}}" width="90px" alt="">
                 </div>
               </div> --}}
-              <button type="submit" class="btn btn-warning mt-3">Edit</button>
+              <button type="submit" class="btn btn-warning mt-3">Simpan</button>
               <a href="/product" class="btn btn-success mt-3">Back</a>
         </form>
     </div>

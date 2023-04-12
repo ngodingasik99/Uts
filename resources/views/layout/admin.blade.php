@@ -24,13 +24,6 @@
       <li class="nav-item">
         <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
       </li>
-      <li class="nav-item d-none d-sm-inline-block">
-        <a href="index3.html" class="nav-link">Home</a>
-      </li>
-    </ul>
-
-     {{-- <ul class="navbar-nav col-8"> --}}
-      <!-- Example split danger button -->
       <ul class="navbar-nav col-8">
         <div class="btn-group ml-auto">
           <a href="/cart" class="btn btn-secondary">Cart</a>
@@ -66,8 +59,9 @@
           </ul>
             </div>
           </ul>
+    </ul>
 
-
+{{-- navbar right --}}
     <ul class="navbar-nav ml-auto">
       <!-- Navbar Search -->
       <li class="nav-item">
