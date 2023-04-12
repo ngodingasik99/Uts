@@ -18,7 +18,7 @@
             <p class="card-text">Kategori: {{$product->category->name}}</p>
             <p class="card-text">{{$product->description}}</p>
               {{-- <input type="hidden" name="product_id" value="{{ $product->id }}"> --}}
-              <a href="/addcart/{{$product->id}}"><input class="btn btn-primary" type="submit" value="Add to Cart"></a>
+              <a href="/cart/{{$product->id}}carts"><input class="btn btn-primary" type="submit" value="Add to Cart"></a>
               <a href="/product" class="btn btn-success">Back</a>
         {{-- </form> --}}
         </div>

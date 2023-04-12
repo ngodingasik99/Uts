@@ -3,7 +3,30 @@
 @section('title', 'Index')
 
 @section('content')
-    @php
+    
+    <div class="container">
+        <div class="content-wrapper">
+            <table class="table">
+                <thead>
+                  <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Nama Barang</th>
+                    <th scope="col">Jumlah Barang</th>
+                    <th scope="col">Handle</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <th scope="row">1</th>
+                    <td>Mark</td>
+                    <td>Otto</td>
+                    <td>@mdo</td>
+                  </tr>
+                </tbody>
+              </table>
+        </div>
+    </div>
+    {{-- @php
       $no=1;  
     @endphp
     <div class="content-wrapper">
@@ -42,8 +65,6 @@
                                         {{ $cart->qty }}
                                         <a href="/cart/{{ $cart->product_id }}/plus" class="btn btn-secondary btn-sm" style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;"><i class="fa fa-plus-circle" aria-hidden="true"></i></a>
                                     </div>
-                                    {{-- <a href="/product/{{ $product->id }}/edit" class="btn btn-warning">Edit</a>
-                                    <a href="/product/{{ $product->id }}/delete" class="btn btn-danger">Delete</a> --}}
                                 </td>
                             </tr>      
                         @endforeach
@@ -55,5 +76,5 @@
             </div>
         
         </div>
-    </div>
+    </div> --}}
 @endsection
