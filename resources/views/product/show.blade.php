@@ -36,10 +36,8 @@
                   <button type="submit" class="btn btn-primary">Add</button>
                 </form>
               </div>
-
               <a href="/product" class="btn btn-success">Back</a>
             </div>
-        {{-- </form> --}}
         </div>
       </div>
     </div>
