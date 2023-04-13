@@ -18,8 +18,27 @@
             <p class="card-text">Kategori: {{$product->category->name}}</p>
             <p class="card-text">{{$product->description}}</p>
               {{-- <input type="hidden" name="product_id" value="{{ $product->id }}"> --}}
-              <a href="/cart/{{$product->id}}carts"><input class="btn btn-primary" type="submit" value="Add to Cart"></a>
+              {{-- <a href="/cart/{{$product->id}}carts"><input class="btn btn-primary" type="submit" value="Add to Cart"></a> --}}
+            <div class="row">
+              <div class="dropdown">
+                <button type="button" class="btn btn-primary dropdown-toggle mr-3" data-bs-toggle="dropdown" aria-expanded="false" data-bs-auto-close="outside">
+                  Add to Cart
+                </button>
+                <form class="dropdown-menu p-4" action="/cart/{{$product->id}}carts" method="post">
+                  <div class="mb-3">
+                    <label for="qty" class="form-label">Quantity</label>
+                    <input type="number" class="form-control" id="qty" name="qty" placeholder="Quantity">
+                  </div>
+                  <div class="mb-3">
+                    <label for="subtotal" class="form-label">Subtotal</label>
+                    <input type="number" class="form-control" id="exampleDropdownFormPassword2" name="subtotal" placeholder="subtotal" disabled>
+                  </div>
+                  <button type="submit" class="btn btn-primary">Add</button>
+                </form>
+              </div>
+
               <a href="/product" class="btn btn-success">Back</a>
+            </div>
         {{-- </form> --}}
         </div>
       </div>
