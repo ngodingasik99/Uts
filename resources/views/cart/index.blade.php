@@ -39,7 +39,7 @@
                 <tbody>
                   <?php $p=1 ?>
                   @foreach ($tampiltabel as $item)
-                  <tr> 
+                  <tr>
                     <th scope="row">{{$p++}}</th>
                     <td>{{$item->name}}</td>
                     <td>{{$item->qty}}</td>
