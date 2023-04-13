@@ -24,7 +24,6 @@
             <div class="d-flex">
                 <a href="/product/add" class="btn btn-primary mt-3" type="button">Checkout</a>
                 <div class="col mt-3">
-                  <input type="text">
                 </div>
              </div><br> 
             <table class="table">
@@ -38,18 +37,26 @@
                   </tr> 
                 </thead>
                 <tbody>
-                  {{-- @foreach ($collection as $item) --}}
+                  <?php $p=1 ?>
+                  @foreach ($tampiltabel as $item)
                   <tr> 
-                    <th scope="row">1</th>
-                    <td>nama barang</td>
-                    <td>jumlah barang</td>
-                    <td>Subtotal</td>
+                    <th scope="row">{{$p++}}</th>
+                    <td>{{$item->name}}</td>
+                    <td>{{$item->qty}}</td>
+                    <td>{{$item->subtotal}}</td>
                     <td>
-                        <a href="delete">Delete</a>
+                      <a href="/cart/{{$item->id_cart}}" class="btn btn-danger">Delete</a>
                     </td>
                   </tr>
-                  {{-- @endforeach --}}
+                  @endforeach
                 </tbody>
+                <tr>
+                  <td>
+                    @foreach ($total as $tot)
+                      {{$tot->total}}
+                    @endforeach
+                  </td>
+                </tr>
               </table>
         </div>
     </div>

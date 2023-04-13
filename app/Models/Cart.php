@@ -18,15 +18,25 @@ class Cart extends Model
 
     protected function ambildata($data)
     {
-        $product_id = $data->input('product_id');
+        $product_id = $data->input('id');
         $qty = $data->input('qty');
         $subtotal = $data->input('subtotal');
-        return DB::insert("INSERT INTO cart (product_id, qty, subtotal) VALUES ('$product_id', '$qty', '$subtotal')");
+        return DB::insert("INSERT INTO carts (product_id, qty, subtotal) VALUES ('$product_id', '$qty', '$subtotal')");
     } 
 
     protected function tampiltabel()
     {
-        return DB::select("select * from cart join product on cart.product_id = product.id");
+        return DB::select("select * from carts join products on carts.product_id = products.id");
+    }
+
+    protected function total()
+    {
+        return DB::select("SELECT SUM(subtotal) as total FROM carts");
+    }
+
+    protected function hapus($data)
+    {
+        return DB::delete("DELETE FROM carts WHERE id_cart='$data'");
     }
 
     public function product()
