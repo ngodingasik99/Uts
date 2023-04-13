@@ -23,6 +23,9 @@
             </div>
             <div class="d-flex">
                 <a href="/product/add" class="btn btn-primary mt-3" type="button">Checkout</a>
+                <div class="col mt-3">
+                  <input type="text">
+                </div>
              </div><br>
             <table class="table">
                 <thead>
@@ -35,6 +38,7 @@
                   </tr>
                 </thead>
                 <tbody>
+                  {{-- @foreach ($collection as $item) --}}
                   <tr> 
                     <th scope="row">1</th>
                     <td>nama barang</td>
@@ -44,6 +48,7 @@
                         <a href="delete">Delete</a>
                     </td>
                   </tr>
+                  {{-- @endforeach --}}
                 </tbody>
               </table>
         </div>
