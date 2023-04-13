@@ -21,8 +21,8 @@
                     <form action="{{ route("do.register") }}" method="POST">
                         @csrf
                     <div class="d-flex align-items-center mb-3 pb-1">
-                      <img src="{{ asset('template/dist/img/logo.png') }}">
-                      <span class="h1 fw-bold mb-0">Aldhita Shop</span>
+                      <img src="{{ asset('template/dist/img/Logo-fix.png') }}" style="height: 110px">
+                      <span class="h1 fw-bold mb-0">Clothes Cashier</span>
                     </div>
 
                     <h5 class="fw-normal mb-3 pb-3" style="letter-spacing: 1px;">Sign into your account</h5>
