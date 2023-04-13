@@ -29,49 +29,11 @@
                             class="fas fa-bars"></i></a>
                 </li>
             </ul>
-            {{-- <ul class="navbar-nav col-8">
-        <div class="btn-group ml-auto">
-          <a href="/cart" class="btn btn-secondary">Cart</a>
-          <button type="button" class="btn btn-secondary dropdown-toggle dropdown-toggle-split" data-bs-toggle="dropdown" aria-expanded="false">
-            <span class="visually-hidden fa fa-shopping-cart cart-ico"><span class="badge text-bg-secondary">4</span></span>
-          </button>
-          <ul class="dropdown-menu">
-            <div class="card" style="width: 15rem;">
-              <div class="row">
-                <div class="col-5">
-                  <div class="card-body" style="width: 5rem;">
-                    <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/195612/cart-item1.jpg" alt="item1"/>
-                  </div>
-                </div>
-                <div class="col-7 px-2">
-                  <div class="col">
-                    <div class="row">
-                      <h5 class="card-title">Celana</h5>
-                    </div>
-                  </div>
-                    <div class="col">
-                      <div class="row">
-                        <p class="card-text">1x</p>
-                        <div class="ml-auto pr-3">
-                          <p class="text-muted">Rp.10000</p>
-                        </div>
-                      </div>
-                    </div>
-                  <a href="#" class="btn btn-primary btn-sm">Delete</a>
-                </div>
-              </div>
-            </div>
-          </ul>
-            </div>
-          </ul>
-    
- --}}
             {{-- navbar right --}}
             <ul class="navbar-nav ml-auto">
                 <!-- Navbar Search -->
                 <li class="nav-item">
-                    <a href="{{ route('logout') }}" class="btn btn-outline-secondary" role="button"
-                        data-bs-toggle="button">Logout</a>
+                  <a href="{{route('logout')}}" class="btn btn-outline-secondary">Logout</a>
                 </li>
             </ul>
         </nav>
