@@ -16,18 +16,18 @@ class Cart extends Model
         'qty'
     ];
 
-    // protected function ambildata($data)
-    // {
-    //     $product_id = $data->input('product_id');
-    //     $qty = $data->input('qty');
-    //     $subtotal = $data->input('subtotal');
-    //     return DB::insert("insert into cart (product_id, qty, subtotal) values ('$product_id, $qty, $subtotal')");
-    // } 
+    protected function ambildata($data)
+    {
+        $product_id = $data->input('product_id');
+        $qty = $data->input('qty');
+        $subtotal = $data->input('subtotal');
+        return DB::insert("INSERT INTO cart (product_id, qty, subtotal) VALUES ('$product_id', '$qty', '$subtotal')");
+    } 
 
-    // protected function tampiltabel()
-    // {
-    //     return DB::select("select * from cart join product on cart.product_id = product.id");
-    // }
+    protected function tampiltabel()
+    {
+        return DB::select("select * from cart join product on cart.product_id = product.id");
+    }
 
     public function product()
     {

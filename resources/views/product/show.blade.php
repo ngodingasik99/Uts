@@ -23,7 +23,8 @@
                 <button type="button" class="btn btn-primary dropdown-toggle mr-3" data-bs-toggle="dropdown" aria-expanded="false" data-bs-auto-close="outside">
                   Add to Cart
                 </button>
-                <form class="dropdown-menu p-4" action="/cart/{{$product->id}}/carts" method="post" enctype="multipart/form-data"> 
+                <form class="dropdown-menu p-4" action="/cart/{{$product->id}}" method="post" enctype="multipart/form-data"> 
+                  @csrf
                   <div class="mb-3">
                     <label for="qty" class="form-label">Harga</label>
                     <input type="text" name="harga" id="harga" value="{{ $product->price }}" readonly> 
@@ -36,6 +37,7 @@
                     <label for="subtotal" class="form-label">Subtotal</label>
                     <input type="number" class="form-control" id="subtotal" name="subtotal" placeholder="subtotal" disabled>
                   </div>
+                  {{-- <a href="/cart/{{$product->id}}/carts">Add</a> --}}
                   <button type="submit" class="btn btn-primary">Add</button>
                 </form>
               </div>

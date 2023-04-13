@@ -52,7 +52,7 @@ Route::put('/category/{id}', [CategoryController::class, 'update']);
 
 //cart
 Route::get('/cart', [CartController::class, 'index']);
-// Route::post('/cart/{id}/carts', [CartController::class, 'carts']);
+Route::get('/cart/{id}', [CartController::class, 'cart']);
 // Route::get('/cart/{id}/min', [CartController::class, 'min']);
 // Route::get('/cart/{id}/plus', [CartController::class, 'plus']);
 

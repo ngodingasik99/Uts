@@ -13,15 +13,15 @@ class CartController extends Controller
 {
     public function index()
     {
-        // $data['data'] = Cart::tampiltabel();
+        $data['data'] = Cart::tampiltabel();
         return view('cart.index');   
     }
 
-    // public function carts($id)
-    // {
-    //     Cart::ambildata($id);
-    //     return redirect('/cart');
-    // }
+    public function cart($id)
+    {
+        Cart::ambildata($id);
+        return redirect('/cart');
+    }
     // public function min($id)
     // {
     //     // $cart = Cart::where('product_id', $id);
