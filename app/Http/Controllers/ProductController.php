@@ -82,12 +82,10 @@ class ProductController extends Controller
                         ->with('success','Product updated successfully');
     }
 
-    public function destroy(Product $product)
+    public function destroy($id)
     {
-        $product->delete();
-
-        return redirect()->route('products.index')
-                        ->with('success','roduct deleted successfully');
+        Product::destroy($id);
+        return redirect('/product');
     }
     
     public function addcart($id)
