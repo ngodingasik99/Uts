@@ -35,7 +35,7 @@
                     <th scope="col">Jumlah Barang</th>
                     <th scope="col">Subtotal</th>
                     <th scope="col">Action</th>
-                  </tr>
+                  </tr> 
                 </thead>
                 <tbody>
                   {{-- @foreach ($collection as $item) --}}
