@@ -24,7 +24,8 @@
       <li class="nav-item">
         <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
       </li>
-      <ul class="navbar-nav col-8">
+    </ul>
+      {{-- <ul class="navbar-nav col-8">
         <div class="btn-group ml-auto">
           <a href="/cart" class="btn btn-secondary">Cart</a>
           <button type="button" class="btn btn-secondary dropdown-toggle dropdown-toggle-split" data-bs-toggle="dropdown" aria-expanded="false">
@@ -59,8 +60,8 @@
           </ul>
             </div>
           </ul>
-    </ul>
-
+    
+ --}}
 {{-- navbar right --}}
     <ul class="navbar-nav ml-auto">
       <!-- Navbar Search -->

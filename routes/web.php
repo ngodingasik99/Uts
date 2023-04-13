@@ -53,8 +53,8 @@ Route::put('/category/{id}', [CategoryController::class, 'update']);
 //cart
 Route::get('/cart', [CartController::class, 'index']);
 Route::get('/cart/{id}/add', [CartController::class, 'create']);
-Route::get('/cart/{id}/min', [CartController::class, 'min']);
-Route::get('/cart/{id}/plus', [CartController::class, 'plus']);
+// Route::get('/cart/{id}/min', [CartController::class, 'min']);
+// Route::get('/cart/{id}/plus', [CartController::class, 'plus']);
 
 });
 
