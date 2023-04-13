@@ -26,7 +26,7 @@
                 <div class="col mt-3">
                   <input type="text">
                 </div>
-             </div><br>
+             </div><br> 
             <table class="table">
                 <thead>
                   <tr>
