@@ -17,9 +17,7 @@ return new class extends Migration
             $table->id();
             $table->foreignId('product_id')->constrained('products')->onDelete('cascade');
             $table->bigInteger('qty');
-            $table->string('token');
-            $table->string('jumlah_pesanan');
-            $table->string('totahl_harga');
+            $table->string('subtotal');
             $table->timestamps();
         });
     }
