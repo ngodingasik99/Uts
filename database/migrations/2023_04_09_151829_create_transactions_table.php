@@ -16,8 +16,6 @@ return new class extends Migration
         Schema::create('transactions', function (Blueprint $table) {
             $table->id();
             $table->foreignId('cart_id')->constrained('carts')->onDelete('cascade');
-            $table->bigInteger('qty');
-            $table->bigInteger('sub_total');
             $table->bigInteger('total');
             $table->timestamps();
         });
