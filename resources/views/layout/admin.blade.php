@@ -64,7 +64,7 @@
           </ul>
             </div>
           </ul>
-    
+
  --}}
             {{-- navbar right --}}
             <ul class="navbar-nav ml-auto">
