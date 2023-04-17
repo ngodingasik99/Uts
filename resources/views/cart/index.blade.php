@@ -45,7 +45,7 @@
                     <td>{{$item->qty}}</td>
                     <td>{{$item->subtotal}}</td>
                     <td>
-                      <a href="/cart/{{$item->id_cart}}" class="btn btn-danger">Delete</a>
+                      <a href="/cart/{{$item->id}}" class="btn btn-danger">Delete</a>
                     </td>
                   </tr>
                   @endforeach
