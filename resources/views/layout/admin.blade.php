@@ -81,6 +81,12 @@
                                         <p>Cart</p>
                                     </a>
                                 </li>
+                                <li class="nav-item">
+                                    <a href="/transaction" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>Transaction</p>
+                                    </a>
+                                </li>
                             </ul>
                         </li>
                     </ul>

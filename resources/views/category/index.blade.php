@@ -48,7 +48,7 @@
                     <th scope="row">{{$k++}}</th>
                     <td>{{$item->name}}</td>
                     <td>{{$item->description}}</td>
-                    <td> <img src="{{asset('storage/' . $item->foto)}}" width="50px" alt=""></td>
+                    <td> <img src="{{asset('storage/' . $item->foto)}}" width="50px" height="50px" alt=""></td>
                     <td>
                         <a href="/category/{{$item->id}}/edit" class="btn btn-warning">Update</a>
                         <a href="/category/{{$item->id}}" class="btn btn-danger">Delete</a>

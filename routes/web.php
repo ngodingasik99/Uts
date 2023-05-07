@@ -5,6 +5,7 @@ use App\Http\Controllers\AuthController;
 use App\Http\Controllers\CartController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\TransactionController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -54,8 +55,11 @@ Route::put('/category/{id}', [CategoryController::class, 'update']);
 Route::get('/cart', [CartController::class, 'index']);
 Route::post('/cart_act', [CartController::class, 'cart_action']);
 Route::get('/cart/{id}', [CartController::class, 'ngapus']);
+Route::get('/checkout', [CartController::class, 'checkout']);
 // Route::get('/cart/{id}/plus', [CartController::class, 'plus']);
 
+Route::get('/transaction', [TransactionController::class, 'index']);
+Route::get('/transaction/{trs_code}', [TransactionController::class, 'show']);
 });
 
 Route::get('/register', [AuthController::class, "register"])->name('register');

@@ -4,9 +4,11 @@ namespace App\Http\Controllers;
 
 use App\Models\Cart;
 use App\Models\Product;
+use App\Models\Transaction;
+use Illuminate\Support\Str;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\DB;
 
+use Illuminate\Support\Facades\DB;
 use function PHPUnit\Framework\isNull;
 
 class CartController extends Controller
@@ -30,6 +32,25 @@ class CartController extends Controller
         Cart::hapus($id);
         return redirect('/cart');
 
+    }
+
+    public function checkout()
+    {
+        $generate_trs_code = 'CLTS12-'. Str::random(10);
+        $carts = Cart::all();
+
+        foreach ($carts as $item) {
+            $store = ([
+                'trs_code' => $generate_trs_code,
+                'product_id' => $item->product_id,
+                'qty' => $item->qty
+            ]);
+            Transaction::create($store);
+        }
+
+        DB::table('carts')->truncate();
+
+        return redirect('/transaction');
     }
     
 }
