@@ -36,7 +36,7 @@ class Cart extends Model
 
     protected function hapus($data)
     {
-        return DB::delete("DELETE FROM carts WHERE id_cart='$data'");
+        return DB::delete("DELETE FROM carts WHERE id='$data'");
     }
 
     public function product()
