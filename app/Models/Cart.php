@@ -26,7 +26,7 @@ class Cart extends Model
 
     protected function tampiltabel()
     {
-        return DB::select("select * from carts join products on carts.product_id = products.id");
+        return DB::select("SELECT carts.id, carts.qty, carts.subtotal, products.name FROM carts JOIN products ON carts.product_id = products.id;");
     }
 
     protected function total()
