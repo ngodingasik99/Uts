@@ -3,7 +3,7 @@
 @section('title', 'Add | Product')
 
 @section('content')
-{{-- <div class="container"> --}}
+<div class="container">
   <div class="content-wrapper">
     <div class="content-header">
       <div class="container">
@@ -68,7 +68,7 @@
                 <label for="exampleInputPassword1" class="form-label">Foto</label>
                 <input type="file" class="form-control @error ('foto') is-invalid @enderror" id="exampleInputPassword1" name="foto">
               </div>
-              <button type="submit" class="d-flex btn btn-warning mt-3 justify-content-center">Add</button>
+              <button type="submit" class="btn btn-warning mt-3 justify-content-center">Add</button>
               <a href="/product" class="btn btn-success mt-3">Back</a>
         </form>
     </div>

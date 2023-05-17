@@ -3,7 +3,8 @@
 @section('title', 'Add')
 
 @section('content')
-<div class="content-wrapper">
+<div class="container">
+  <div class="content-wrapper">
     <!-- Content Header (Page header) -->
     <div class="content-header">
       <div class="container-fluid">
@@ -55,5 +56,6 @@
         <button type="submit" class="btn btn-primary mt-3">Simpan</button>
         <a href="/category" class="btn btn-success mt-3">Back</a>
     </form>
+</div>
 </div>
 @endsection

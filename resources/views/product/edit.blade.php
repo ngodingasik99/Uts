@@ -3,7 +3,8 @@
 @section('title', 'Edit')
 
 @section('content')
-<div class="content-wrapper">
+<div class="container">
+  <div class="content-wrapper">
     <!-- Content Header (Page header) -->
     <div class="content-header">
       <div class="container-fluid">
@@ -82,4 +83,6 @@
               <a href="/product" class="btn btn-success mt-3">Back</a>
         </form>
     </div>
+</div>
+</div>
 @endsection

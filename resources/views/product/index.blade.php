@@ -3,7 +3,8 @@
 @section('title', 'Index')
 
 @section('content')
-    <div class="content-wrapper">
+    <div class="container">
+      <div class="content-wrapper">
         <div class="content-header">
             <div class="container-fluid">
                 <div class="row mb-2">
@@ -37,9 +38,10 @@
                   </tr>
                 </thead>
                 <tbody>
+                  <?php $p=1 ?>
                     @foreach ($products as $item)
                   <tr>
-                    <th scope="row">{{$item->id}}</th>
+                    <th scope="row">{{$p++}}</th>
                     <td>{{$item->name}}</td>
                     <td>{{$item->price}}</td>
                     <td>{{$item->description}}</td>
@@ -68,6 +70,7 @@
                 </tbody>
               </table>
       </div>
+    </div>
     </div>
 
 

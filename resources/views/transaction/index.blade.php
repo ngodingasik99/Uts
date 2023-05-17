@@ -3,7 +3,8 @@
 @section('title', 'Index')
 
 @section('content')
-    <div class="content-wrapper">
+    <div class="container">
+      <div class="content-wrapper">
         <div class="content-header">
             <div class="container-fluid">
                 <div class="row mb-2">
@@ -51,6 +52,7 @@
                 </tbody>
               </table>
       </div>
+    </div>
     </div>
 
 
